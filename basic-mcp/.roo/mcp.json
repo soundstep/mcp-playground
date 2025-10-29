@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mcp-open-library": {
+      "type": "streamable-http",
+      "url": "http://localhost:3000/mcp",
+      "alwaysAllow": [],
+      "disabled": true
+    }
+  }
+}
