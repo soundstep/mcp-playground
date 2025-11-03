@@ -3,6 +3,7 @@ import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
 import { weatherTool } from '../tools/weather-tool';
 import { scorers } from '../scorers/weather-scorer';
+import * as tools from "@mastra/yc-hn-tools";
 
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 
@@ -28,7 +29,7 @@ export const weatherAgent = new Agent({
 
       Use the weatherTool to fetch current weather data.
 `,
-  tools: { weatherTool },
+  tools: { weatherTool, ...tools },
   scorers: {
     toolCallAppropriateness: {
       scorer: scorers.toolCallAppropriatenessScorer,
