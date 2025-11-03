@@ -3,6 +3,12 @@ import { createToolCallAccuracyScorerCode } from '@mastra/evals/scorers/code';
 import { createCompletenessScorer } from '@mastra/evals/scorers/code';
 import { createScorer } from '@mastra/core/scores';
 
+import { createOpenRouter } from '@openrouter/ai-sdk-provider';
+
+const openrouter = createOpenRouter({
+  apiKey: process.env.OPENROUTER_API_KEY,
+});
+
 export const toolCallAppropriatenessScorer = createToolCallAccuracyScorerCode({
   expectedTool: 'weatherTool',
   strictMode: false,
@@ -17,7 +23,7 @@ export const translationScorer = createScorer({
     'Checks that non-English location names are translated and used correctly',
   type: 'agent',
   judge: {
-    model: 'mistral/mistral-medium-2508',
+    model: 'google/gemini-2.5-flash', // 'mistral/mistral-medium-2508',
     instructions:
       'You are an expert evaluator of translation quality for geographic locations. ' +
       'Determine whether the user text mentions a non-English location and whether the assistant correctly uses an English translation of that location. ' +

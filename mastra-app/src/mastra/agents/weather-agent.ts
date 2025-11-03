@@ -5,16 +5,15 @@ import { weatherTool } from '../tools/weather-tool';
 import { scorers } from '../scorers/weather-scorer';
 import * as tools from "@mastra/yc-hn-tools";
 
-import { createOpenRouter } from '@openrouter/ai-sdk-provider';
+// import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 
-const openrouter = createOpenRouter({
-  apiKey: process.env.OPENROUTER_API_KEY,
-});
+// const openrouter = createOpenRouter({
+//   apiKey: process.env.OPENROUTER_API_KEY,
+// });
 
 export const weatherAgent = new Agent({
-  model: openrouter('openai/gpt-oss-20b:free'),
+  model: 'google/gemini-2.5-flash',
   name: 'Weather Agent',
-  id: 'get-weather',
   instructions: `
       You are a helpful weather assistant that provides accurate weather information and can help planning activities based on the weather.
 
