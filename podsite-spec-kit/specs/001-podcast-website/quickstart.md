@@ -6,8 +6,8 @@
 
 ## Prerequisites
 
-- Node.js 18.x or later
-- npm or yarn package manager
+- Node.js 22.x or later
+- pnpm package manager
 - Code editor (VS Code recommended)
 - Git (for version control)
 - Basic knowledge of React and TypeScript
@@ -17,7 +17,7 @@
 ### 1. Initialize Next.js Project
 
 ```bash
-npx create-next-app@latest podcast-website --typescript --tailwind --app --eslint
+npx create-next-app@latest podcast-website --typescript --tailwind --app --eslint --use-pnpm
 cd podcast-website
 ```
 
